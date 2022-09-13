@@ -18,13 +18,12 @@ export const Registration = () => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      fullName: 'Nikita Plushkin',
-      email: 'nikitaP@test.com.ua',
-      password: '1234567890'
+      fullName: '',
+      email: '',
+      password: ''
     },
     mode: 'onChange',
   });
