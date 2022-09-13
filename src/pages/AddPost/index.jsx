@@ -43,7 +43,7 @@ export const AddPost = () => {
       const file = event.target.files[0];
       formData.append('image', file);
       const { data } = await axios.post('/upload', formData);
-      setDataOfNewPost(prev => ({ ...prev, imageUrl: `http://localhost:4000${data.url}` }))
+      setDataOfNewPost(prev => ({ ...prev, imageUrl: `${process.env.REACT_APP_BLOG_API_URL}${data.url}` }))
     } catch (error) {
       console.warn(error);
       alert('Can`t upload image!');
